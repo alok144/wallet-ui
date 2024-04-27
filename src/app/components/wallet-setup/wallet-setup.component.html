@@ -1,0 +1,19 @@
+<div class="container">
+    <form [formGroup]="walletForm">
+        <div class="form-group">
+            <label for="name" >Wallet Name</label>
+            <span class="required">*</span>
+            <input type="text" formControlName="name" class="form-control" placeholder="Enter Wallet Name" />
+        </div>
+        <div class="form-group">
+            <label for="balance">Initial Balance</label>
+            <span class="required">*</span>
+            <input type="text" formControlName="balance" class="form-control" placeholder="Enter Initial Balance" />
+        </div>
+        <div class="btn-group">
+            <button (click)="setupWallet()" class="btn btn-outline-primary">
+                Setup Wallet
+            </button>
+        </div>
+    </form>
+</div>

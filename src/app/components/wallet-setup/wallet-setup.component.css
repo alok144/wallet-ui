@@ -1,0 +1,18 @@
+.container {
+    align-items: center;
+    padding: 20px;
+    .form-group {
+        margin-bottom: 10px;
+        .required {
+            margin: 4px;
+            color: red;
+            content: "*";
+            right: 9px;
+            top: 0px;
+            font-size: 18px;
+        }
+    }
+    .btn-group {
+        width: 100%;
+    }
+}
