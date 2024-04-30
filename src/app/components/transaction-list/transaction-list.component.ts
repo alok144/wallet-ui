@@ -32,10 +32,9 @@ export class TransactionListComponent implements OnInit {
       currentPage: this.currentPage,
       sortBy
     }
-    this.walletService.getAllTransactions(walletId, query).subscribe((data:any) => {
-      console.log('data', data)
-      this.transactionList = data?.transactionList;
-      this.totalCount = data?.totalCount;
+    this.walletService.getAllTransactions(walletId, query).subscribe((resp:any) => {
+      this.transactionList = resp?.data?.transactionList;
+      this.totalCount = resp?.data?.totalCount;
     });
   }
 
@@ -63,7 +62,7 @@ export class TransactionListComponent implements OnInit {
   convertToCsv(data: any[]): string {
     const csvRows = [];
     // const headers = Object.keys(data[0]);
-    const headers = ['amount', 'type', 'balance', 'date'];
+    const headers = ['amount', 'type', 'description', 'balance', 'date'];
     csvRows.push(headers.join(','));
     for (const row of data) {
       const values = headers.map(header => {

@@ -35,9 +35,9 @@ export class WalletSetupComponent implements OnInit {
     }
 
     const payload = this.walletForm.getRawValue();
-    this.walletService.setupWallet(payload).subscribe((data:any) => {
-      if(data) {
-        localStorage.setItem('walletId', data?._id)
+    this.walletService.setupWallet(payload).subscribe((resp:any) => {
+      if(resp) {
+        localStorage.setItem('walletId', resp?.data?._id)
         this.toastrService.success('Wallet Created Successfully', "Success",{
           timeOut:3000
         });

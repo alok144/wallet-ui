@@ -31,6 +31,7 @@
               <th style="width:60px">S.No.</th>
               <th>Amount</th>
               <th>Type</th>
+              <th>Description</th>
               <th>Date & Time</th>
               <th>Balance</th>
             </tr>
@@ -41,6 +42,7 @@
               <td>{{i + 1 + (currentPage-1)*10}}</td>
               <td>{{ transaction?.amount || '--'}}</td>
               <td>{{ transaction?.type || "--" }}</td>
+              <td>{{ transaction?.description || "--" }}</td>
               <td>{{ transaction?.createdAt | date }} - {{ transaction?.createdAt | date: 'shortTime' }}</td>
               <td>{{ transaction?.balance || "--" }}</td>
             </tr>

@@ -1,37 +1,56 @@
 <div class="container">
-    <form [formGroup]="transactionForm">
-        <div class="form-group">
-            <label for="amount">Transaction Amount</label>
-            <span class="required">*</span>
-            <input type="text" formControlName="amount" class="form-control" placeholder="Enter Amount" />
-        </div>
-        <div class="form-group">
-            <label class="switch">
-                <input 
-                formControlName="type" class="checkbox" 
-                type="checkbox" [checked]="true" >
-                <span class="slider round">
-                   <span [ngClass]="transactionForm.get('type')?.value == true ? 'credit': 'debit'"> {{transactionForm.get('type')?.value == true ? 'CREDIT': 'DEBIT'}} </span>
-                </span>
-              </label>
-
-        </div>
-        <div class="btn-group">
-            <button (click)="executeTransaction()" class="btn btn-outline-primary">
-                Execute Transaction
-            </button>
-        </div>
-
-        <div class="btn-group">
-        <a (click)="viewAllTransactions()">
-            View All Transactions
-        </a>
+  <form [formGroup]="transactionForm">
+    <div class="form-group">
+      <label for="amount">Transaction Amount</label>
+      <span class="required">*</span>
+      <input
+        type="text"
+        formControlName="amount"
+        class="form-control"
+        placeholder="Enter Amount"
+      />
     </div>
-<div class="btn-group">
-            <a (click)="deleteWalletDetails()">
-                Delete Wallet
-            </a>
-        </div>
+    <div class="form-group">
+      <label for="amount">Description</label>
+      <input
+        type="text"
+        formControlName="description"
+        class="form-control"
+        placeholder="Enter Description"
+      />
+    </div>
+    <div class="form-group">
+      <label class="switch">
+        <input
+          formControlName="type"
+          class="checkbox"
+          type="checkbox"
+          [checked]="true"
+        />
+        <span class="slider round">
+          <span
+            [ngClass]="
+              transactionForm.get('type')?.value == true ? 'credit' : 'debit'
+            "
+          >
+            {{
+              transactionForm.get("type")?.value == true ? "CREDIT" : "DEBIT"
+            }}
+          </span>
+        </span>
+      </label>
+    </div>
+    <div class="btn-group">
+      <button (click)="executeTransaction()" class="btn btn-outline-primary">
+        Execute Transaction
+      </button>
+    </div>
 
-    </form>
+    <div class="btn-group">
+      <a (click)="viewAllTransactions()"> View All Transactions </a>
+    </div>
+    <div class="btn-group">
+      <a (click)="deleteWalletDetails()"> Delete Wallet </a>
+    </div>
+  </form>
 </div>

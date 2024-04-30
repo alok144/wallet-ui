@@ -20,11 +20,11 @@ export class WalletService {
   }
 
   executeTransaction(payload:any, walletId:any) {
-    return this.http.post(WALLET_END_POINT + 'transaction/add/' + walletId, payload);
+    return this.http.post(WALLET_END_POINT + 'transaction/' + walletId, payload);
   }
 
   getAllTransactions(walletId:any, query: any) {
-    return this.http.get(WALLET_END_POINT + 'transaction/all/' + walletId, {params: query});
+    return this.http.get(WALLET_END_POINT + 'transaction/' + walletId, {params: query});
   }
 
 }
